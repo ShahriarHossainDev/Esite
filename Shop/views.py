@@ -76,10 +76,12 @@ def logout(request):
     return redirect('login')
 
 
-#@login_required()
+@login_required
 def profile(request):
-    user = userProfile.objects.all()
-    Context = ({
+    a = request.user
+    user = userProfile.objects.get(user=a)
+    print(user)
+    context = ({
         "user": user
     })
-    return render(request, 'profile.html', Context)
+    return render(request, 'profile.html', context)
