@@ -22,14 +22,14 @@ class userProfile(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=30)
 
     def __str__(self):
         return str(self.name)
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=100)
     price = models.FloatField()
     P_price = models.FloatField()
     description = models.TextField(max_length=500)
